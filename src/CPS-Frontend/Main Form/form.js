@@ -101,7 +101,7 @@ const Form = () => {
                         <CardContent>
                             <Typography variant="h5" sx={{ marginBottom: "20px", textAlign: "center" }}>Information About Research Project {index + 1}</Typography>
                             <FormControl fullWidth>
-                                <InputLabel id="t">Select Funding Amonut for Project {index + 1} <span style={{ color: "red" }}>*</span></InputLabel>
+                                <InputLabel id="t">Select Firebase Deploy Funding Amonut for Project {index + 1} <span style={{ color: "red" }}>*</span></InputLabel>
                                 <Select labelId="t" id="g" label="Select Funding Amonut for Project">
                                     {amount.map((_, index) => (
                                         <MenuItem key={index} value={_}>{_}</MenuItem>
