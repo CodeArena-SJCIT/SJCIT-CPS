@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "build",
     "cleanUrls": true,
     "rewrites": [
       {
