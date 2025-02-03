@@ -13,3 +13,9 @@
     border-radius: 20px;
     transition: linear;
 }
+
+@media (max-width:480px) {
+    .main-login-div {
+        width: 70%;
+    }
+}
