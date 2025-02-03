@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+# Important Information
+`The build folder is essential for deploying the code to the production url i.e. sjcit-cps.web.app as in the firebase init command the deploy folder has been selected as the build. So remove the build folder from your .gitignore files if it is there for your commits!`
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-`The build folder is essential for deploying the code to the production url i.e. sjcit-cps.web.app as in the firebase init command the deploy folder has been selected as the build. So remove the build folder from your .gitignore files if it is there for your commits!`
 
 ## Available Scripts
 
