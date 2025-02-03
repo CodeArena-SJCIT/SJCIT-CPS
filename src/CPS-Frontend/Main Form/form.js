@@ -77,6 +77,8 @@ const Form = () => {
         setconsultancyProjectsOption(event.target.checked);
     }
 
+
+
     return (
         <>
             <div className="main-form-div">
@@ -191,7 +193,7 @@ const Form = () => {
 
                     {consultancyProjectsOption &&
                         <CardContent>
-                            <TextField type="number" label="Total Amount of Consultacny Projects you have done (In Lakhs)" fullWidth />
+                            <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth />
                         </CardContent>
                     }
 

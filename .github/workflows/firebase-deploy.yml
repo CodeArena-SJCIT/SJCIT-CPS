@@ -1,0 +1,26 @@
+name: Firebase Deployment
+
+on:
+  push:
+    branches:
+      - main
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  deploy:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Authenticate Firebase
+        run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > $HOME/firebase.json
+
+      - name: Deploy to Production
+        run: firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}" --project=sjcit-cps
