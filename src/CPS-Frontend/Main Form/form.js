@@ -83,7 +83,7 @@ const Form = () => {
         <>
             <div className="main-form-div">
                 <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
-                    <CardHeader title="Externally Firebase Deploy Funded Projects and Patents" subheader="Select Options" sx={{ textAlign: "center" }} />
+                    <CardHeader title="Externally Funded Projects and Patents" subheader="Select Options" sx={{ textAlign: "center" }} />
 
                     <CardContent>
                         <FormGroup>
