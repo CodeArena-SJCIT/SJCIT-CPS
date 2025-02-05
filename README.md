@@ -4,6 +4,11 @@
 #### Example of your .gitignore file, and how it should be modified.
 
 ```
+Previously
+#Ignore the build folder
+/build
+
+Change this to
 #Ignore the build folder
 #/build
 ```
