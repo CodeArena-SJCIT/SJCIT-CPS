@@ -14,7 +14,7 @@ Change this to
 ```
 ---
 #### The Stage / Testing version 
-The testing verison of the sjcit-cps.web.app is deployed here, [here](https://sjcit-cps-preview.netlify.app)
+The testing verison of the `sjcit-cps.web.app` is deployed here, [here](https://sjcit-cps-preview.netlify.app)
 
 ---
 
