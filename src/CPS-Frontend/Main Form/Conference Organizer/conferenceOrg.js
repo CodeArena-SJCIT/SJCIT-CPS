@@ -12,6 +12,7 @@ const ConferenceOrganizer = () => {
 
     const handleConferenceOrgChecked = (e) => {
         setconferenceOrgChecked(e.target.checked);
+        let a = numberOfConferenceOrg;
     }
 
     return (
