@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FormGroup, TextField, Checkbox, Divider, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
+import { Radio, RadioGroup, FormGroup, TextField, Checkbox, Divider, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const PhdComponent = () => {
@@ -53,7 +53,7 @@ const PhdComponent = () => {
     }, [numberOfStudentCompletedPhd, numberOfStudentsPursuingPhd]);
 
     const handlePhdOptionChecked = (event) => {
-        setphdOptionChecked(event.target.checked);
+        setphdOptionChecked(event.target.value);
     }
 
     return (
@@ -62,11 +62,15 @@ const PhdComponent = () => {
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
                 <CardHeader title="Ph.D. Scholars" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                <FormGroup sx={{ marginTop: "10px", marginBottom: "20px" }}>
-                    <FormControlLabel control={<Checkbox checked={phdOptionChecked} onChange={(e) => handlePhdOptionChecked(e)} />} label="Are any students under your supervision currently pursuing or have they completed a Ph.D.?" />
+                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                    <Typography>Do you supervise any students pursuing or who have completed a Ph.D.?</Typography>
+                    <RadioGroup row sx={{ gap: 2 }} value={phdOptionChecked} onChange={(e) => handlePhdOptionChecked(e)}>
+                        <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                        <FormControlLabel value="No" control={<Radio />} label="No" />
+                    </RadioGroup>
                 </FormGroup>
 
-                {phdOptionChecked &&
+                {(phdOptionChecked !== "No" && phdOptionChecked) &&
                     <>
                         <CardContent>
                             <TextField type="number" label="How many students have been Awarded Ph.D." fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfStudentCompletedPhd(e.target.value) }} />

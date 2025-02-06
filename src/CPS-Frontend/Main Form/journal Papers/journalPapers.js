@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
+import { RadioGroup, Radio, FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const JournalPapers = () => {
@@ -10,7 +10,7 @@ const JournalPapers = () => {
     const [journalPaperList, setjournalPaperList] = useState([]);
 
     const handlejournalPaperChecked = (e) => {
-        setjournalPaperChecked(e.target.checked)
+        setjournalPaperChecked(e.target.value)
     }
 
     const handleSelectedOptionForJournalPaperGuide = (index, option) => {
@@ -40,11 +40,15 @@ const JournalPapers = () => {
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
                 <CardHeader title="Journal Papers / Book chapter in SCI / Scopus" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                <FormGroup sx={{ marginTop: "10px", marginBottom: "20px" }}>
-                    <FormControlLabel control={<Checkbox checked={journalPaperChecked} onChange={(e) => handlejournalPaperChecked(e)} />} label="Do you have any journal papers or book chapters published in SCI or Scopus-indexed journals?" />
+                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                    <Typography>Do you have publications in SCI or Scopus-indexed journals?</Typography>
+                    <RadioGroup row sx={{ gap: 2 }} value={journalPaperChecked} onChange={(e) => handlejournalPaperChecked(e)}>
+                        <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                        <FormControlLabel value="No" control={<Radio />} label="No" />
+                    </RadioGroup>
                 </FormGroup>
 
-                {journalPaperChecked &&
+                {(journalPaperChecked !== "No" && journalPaperChecked) &&
                     <>
                         <CardContent>
                             <TextField type="number" label="How many journal papers or book chapters published in SCI or Scopus-indexed journals?" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfJournalPapers(e.target.value) }} />
