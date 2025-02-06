@@ -93,7 +93,7 @@ const Form = () => {
 
 
                     {checked && <CardContent>
-                        <TextField label="How many Externally Sponsored R&D Projects Completed / Ongoing" type="number" variant="outlined" fullWidth onChange={(e) => setnumberOfResearchProjects(e.target.value)} />
+                        <TextField label="How many Externally Sponsored R&D Projects Completed / Ongoing" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfResearchProjects(e.target.value) }} />
                     </CardContent>}
 
                     {checked && projects.map((_, index) => (
@@ -140,7 +140,7 @@ const Form = () => {
 
 
                     {patentChecked && <CardContent>
-                        <TextField label="How many patents have you published or been granted?" type="number" variant="outlined" fullWidth onChange={(e) => setNumberofPatents(e.target.value)} />
+                        <TextField label="How many patents have you published or been granted?" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setNumberofPatents(e.target.value) }} />
                     </CardContent>}
 
                     {patentChecked && patents.map((_, index) => (
@@ -193,7 +193,7 @@ const Form = () => {
 
                     {consultancyProjectsOption &&
                         <CardContent>
-                            <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth />
+                            <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setconsultancyProjectsOption(e.target.value) }} />
                         </CardContent>
                     }
 

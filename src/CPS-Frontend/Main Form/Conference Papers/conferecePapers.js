@@ -47,7 +47,7 @@ const ConferencePapers = () => {
                 {conferencePaperChecked &&
                     <>
                         <CardContent>
-                            <TextField type="number" label="How many journal papers or book chapters published in SCI or Scopus-indexed journals?" fullWidth onChange={(e) => setnumberOfConferencePapers(e.target.value)} />
+                            <TextField type="number" label="How many journal papers or book chapters published in SCI or Scopus-indexed journals?" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0 } e.target.value = value; setnumberOfConferencePapers(e.target.value) }} />
                         </CardContent>
 
                         {conferencePaperList.map((_, index) => (
