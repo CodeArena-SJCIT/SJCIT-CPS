@@ -70,7 +70,7 @@ const PhdComponent = () => {
                     </RadioGroup>
                 </FormGroup>
 
-                {(phdOptionChecked != "No" && phdOptionChecked) &&
+                {(phdOptionChecked !== "No" && phdOptionChecked) &&
                     <>
                         <CardContent>
                             <TextField type="number" label="How many students have been Awarded Ph.D." fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfStudentCompletedPhd(e.target.value) }} />

@@ -40,7 +40,7 @@ const ConferencePapers = () => {
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
                 <CardHeader title="Conference papers indexed in SCI / Scopus / Web of Science Conference / any internationally renowned conference" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px" }}>
+                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
                     <Typography>Do you have any Conference papers indexed in SCI / Scopus / Web of Science Conference / any internationally renowned conference?</Typography>
                     <RadioGroup row sx={{ gap: 2 }} value={conferencePaperChecked} onChange={(e) => handleConferencePaperChecked(e)}>
                         <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
@@ -48,7 +48,7 @@ const ConferencePapers = () => {
                     </RadioGroup>
                 </FormGroup>
 
-                {(conferencePaperChecked != "No" && conferencePaperChecked) &&
+                {(conferencePaperChecked !== "No" && conferencePaperChecked) &&
                     <>
                         <CardContent>
                             <TextField type="number" label="How many journal papers or book chapters published in SCI or Scopus-indexed journals?" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0 } e.target.value = value; setnumberOfConferencePapers(e.target.value) }} />

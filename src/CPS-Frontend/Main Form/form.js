@@ -148,7 +148,7 @@ const Form = () => {
                     </CardContent>
 
 
-                    {(patentChecked != "No" && patentChecked) && <CardContent>
+                    {(patentChecked !== "No" && patentChecked) && <CardContent>
                         <TextField label="How many patents have you published or been granted?" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setNumberofPatents(e.target.value) }} />
                     </CardContent>}
 
@@ -205,7 +205,7 @@ const Form = () => {
                         </RadioGroup>
                     </FormGroup>
 
-                    {(consultancyProjectsOption != "No" && consultancyProjectsOption) &&
+                    {(consultancyProjectsOption !== "No" && consultancyProjectsOption) &&
                         <CardContent>
                             <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setconsultancyProjectsOption(e.target.value) }} />
                         </CardContent>

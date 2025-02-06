@@ -11,7 +11,7 @@ const ConferenceOrganizer = () => {
 
 
     const handleConferenceOrgChecked = (e) => {
-        setconferenceOrgChecked(e.target.checked);
+        setconferenceOrgChecked(e.target.value);
     }
 
     return (
@@ -19,11 +19,15 @@ const ConferenceOrganizer = () => {
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
                 <CardHeader title="National / International conference organised as Chairman / Secretary / Convenors / Session Chair / Session Co-Chair" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px" }}>
-                    <FormControlLabel control={<Checkbox checked={conferenceOrgChecked} onChange={(e) => handleConferenceOrgChecked(e)} />} label="Do you have Organized any National / International conference as Chairman / Secretary / Convenors / Session Chair / Session Co-Chair?" />
+                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                    <Typography>Do you have Organized any National / International conference as Chairman / Secretary / Convenors / Session Chair / Session Co-Chair?</Typography>
+                    <RadioGroup row sx={{ gap: 2 }} value={conferenceOrgChecked} onChange={(e) => handleConferenceOrgChecked(e)}>
+                        <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                        <FormControlLabel value="No" control={<Radio />} label="No" />
+                    </RadioGroup>
                 </FormGroup>
 
-                {(conferenceOrgChecked || !numberOfConferenceOrg) &&
+                {(conferenceOrgChecked !== "No" && conferenceOrgChecked) &&
                     <>
                         <CardContent>
                             <Tooltip title={
