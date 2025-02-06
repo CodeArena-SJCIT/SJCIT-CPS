@@ -69,7 +69,7 @@ const PhdComponent = () => {
                 {phdOptionChecked &&
                     <>
                         <CardContent>
-                            <TextField type="number" label="How many students have been Awarded Ph.D." fullWidth onChange={(e) => setnumberOfStudentCompletedPhd(e.target.value)} />
+                            <TextField type="number" label="How many students have been Awarded Ph.D." fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfStudentCompletedPhd(e.target.value) }} />
 
                             {phdList.map((_, index) => (
                                 <>
@@ -94,7 +94,7 @@ const PhdComponent = () => {
                         </CardContent>
 
                         <CardContent>
-                            <TextField type="number" label="How many Students are Pursuing Ph.D." fullWidth onChange={(e) => setnumberOfStudentsPursuingPhd(e.target.value)} />
+                            <TextField type="number" label="How many Students are Pursuing Ph.D." fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfStudentsPursuingPhd(e.target.value) }} />
 
                             {phdListPursuing.map((_, index) => (
                                 <>
