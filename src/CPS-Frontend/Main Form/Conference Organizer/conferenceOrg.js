@@ -7,7 +7,7 @@ const ConferenceOrganizer = () => {
 
     const [conferenceOrgChecked, setconferenceOrgChecked] = useState(false);
 
-    /*const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();*/
+    const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();
 
 
     const handleConferenceOrgChecked = (e) => {
