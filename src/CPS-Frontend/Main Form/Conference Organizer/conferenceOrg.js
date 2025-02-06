@@ -1,13 +1,13 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Box, Tooltip, Button, FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, CardMedia, Typography, CardHeader, CardActions, FormControlLabel } from "@mui/material";
+import { useState } from "react";
+import { Box, Tooltip, FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const ConferenceOrganizer = () => {
 
     const [conferenceOrgChecked, setconferenceOrgChecked] = useState(false);
 
-    const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();
+    /*const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();*/
 
 
     const handleConferenceOrgChecked = (e) => {
