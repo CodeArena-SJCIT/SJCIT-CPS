@@ -97,7 +97,7 @@ const Form = () => {
                     </CardContent>
 
 
-                    {(checked != "No" && checked) && <CardContent>
+                    {(checked !== "No" && checked) && <CardContent>
                         <TextField label="How many Externally Sponsored R&D Projects Completed / Ongoing" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfResearchProjects(e.target.value) }} />
                     </CardContent>}
 

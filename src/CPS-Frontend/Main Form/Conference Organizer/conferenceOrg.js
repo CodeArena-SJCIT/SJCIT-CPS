@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { RadioGroup, Radio, Box, Tooltip, FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
+import { RadioGroup, Radio, Box, Tooltip, FormGroup, TextField, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const ConferenceOrganizer = () => {
@@ -8,7 +8,6 @@ const ConferenceOrganizer = () => {
     const [conferenceOrgChecked, setconferenceOrgChecked] = useState(false);
 
     const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();
-
 
     const handleConferenceOrgChecked = (e) => {
         setconferenceOrgChecked(e.target.value);
@@ -42,7 +41,7 @@ const ConferenceOrganizer = () => {
                             </Tooltip>
                         </CardContent>
 
-
+                        {numberOfConferenceOrg || 1}
 
                     </>
                 }
