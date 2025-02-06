@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
+import { RadioGroup, Radio, FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const ConferencePapers = () => {
@@ -26,7 +26,7 @@ const ConferencePapers = () => {
     }, [numberOfConferencePapers]);
 
     const handleConferencePaperChecked = (e) => {
-        setconferencePaperChecked(e.target.checked);
+        setconferencePaperChecked(e.target.value);
     }
 
     const handleSelectedOptionForConferencePaperGuide = (index, option) => {
@@ -40,11 +40,15 @@ const ConferencePapers = () => {
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
                 <CardHeader title="Conference papers indexed in SCI / Scopus / Web of Science Conference / any internationally renowned conference" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                <FormGroup sx={{ marginTop: "10px", marginBottom: "20px" }}>
-                    <FormControlLabel control={<Checkbox checked={conferencePaperChecked} onChange={(e) => handleConferencePaperChecked(e)} />} label="Do you have any Conference papers indexed in SCI / Scopus / Web of Science Conference / any internationally renowned conference?" />
+                <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px" }}>
+                    <Typography>Do you have any Conference papers indexed in SCI / Scopus / Web of Science Conference / any internationally renowned conference?</Typography>
+                    <RadioGroup row sx={{ gap: 2 }} value={conferencePaperChecked} onChange={(e) => handleConferencePaperChecked(e)}>
+                        <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                        <FormControlLabel value="No" control={<Radio />} label="No" />
+                    </RadioGroup>
                 </FormGroup>
 
-                {conferencePaperChecked &&
+                {(conferencePaperChecked != "No" && conferencePaperChecked) &&
                     <>
                         <CardContent>
                             <TextField type="number" label="How many journal papers or book chapters published in SCI or Scopus-indexed journals?" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0 } e.target.value = value; setnumberOfConferencePapers(e.target.value) }} />

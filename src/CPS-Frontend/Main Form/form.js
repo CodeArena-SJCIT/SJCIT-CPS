@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./form.css";
-import { FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
+import { Radio, RadioGroup, FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 import PhdComponent from "./phd Component/phdComponent";
 import JournalPapers from "./journal Papers/journalPapers";
 import ConferencePapers from "./Conference Papers/conferecePapers";
@@ -74,7 +74,7 @@ const Form = () => {
     }
 
     const handleConsultancyProjectsOption = (event) => {
-        setconsultancyProjectsOption(event.target.checked);
+        setconsultancyProjectsOption(event.target.value);
     }
 
 
@@ -86,13 +86,18 @@ const Form = () => {
                     <CardHeader title="Externally Funded Projects and Patents" subheader="Select Options" sx={{ textAlign: "center" }} />
 
                     <CardContent>
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />} label="Have you done Any Externally Sponsored R&D Projects" />
+                        <FormGroup row sx={{ alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                            <Typography>Have you done Any Externally Sponsored R&D Projects</Typography>
+                            <RadioGroup row value={checked} onChange={(e) => setChecked(e.target.value)}>
+                                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                                <FormControlLabel value="No" control={<Radio />} label="No" />
+                            </RadioGroup>
                         </FormGroup>
+
                     </CardContent>
 
 
-                    {checked && <CardContent>
+                    {(checked != "No" && checked) && <CardContent>
                         <TextField label="How many Externally Sponsored R&D Projects Completed / Ongoing" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfResearchProjects(e.target.value) }} />
                     </CardContent>}
 
@@ -133,13 +138,17 @@ const Form = () => {
                     ))}
 
                     <CardContent>
-                        <FormGroup>
-                            <FormControlLabel control={<Checkbox checked={patentChecked} onChange={(e) => setPatentChecked(e.target.checked)} />} label="Have you published any patents or hold ownership of any patents?" />
+                        <FormGroup row sx={{ alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                            <Typography>Have you published any patents or hold ownership of any patents?</Typography>
+                            <RadioGroup row value={patentChecked} onChange={(e) => setPatentChecked(e.target.value)}>
+                                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                                <FormControlLabel value="No" control={<Radio />} label="No" />
+                            </RadioGroup>
                         </FormGroup>
                     </CardContent>
 
 
-                    {patentChecked && <CardContent>
+                    {(patentChecked != "No" && patentChecked) && <CardContent>
                         <TextField label="How many patents have you published or been granted?" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setNumberofPatents(e.target.value) }} />
                     </CardContent>}
 
@@ -185,13 +194,18 @@ const Form = () => {
                 </Card>
 
                 <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
+
                     <CardHeader title="Consultancy Projects" subheader="Select Options" sx={{ textAlign: "center" }} />
 
-                    <FormGroup sx={{ marginTop: "10px", marginBottom: "20px" }}>
-                        <FormControlLabel control={<Checkbox checked={consultancyProjectsOption} onChange={(e) => handleConsultancyProjectsOption(e)} />} label="Have you done any Consultancy Projects " />
+                    <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
+                        <Typography>Have you done any Consultancy Projects</Typography>
+                        <RadioGroup row value={consultancyProjectsOption} onChange={(e) => handleConsultancyProjectsOption(e)}>
+                            <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                            <FormControlLabel value="No" control={<Radio />} label="No" />
+                        </RadioGroup>
                     </FormGroup>
 
-                    {consultancyProjectsOption &&
+                    {(consultancyProjectsOption != "No" && consultancyProjectsOption) &&
                         <CardContent>
                             <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setconsultancyProjectsOption(e.target.value) }} />
                         </CardContent>
