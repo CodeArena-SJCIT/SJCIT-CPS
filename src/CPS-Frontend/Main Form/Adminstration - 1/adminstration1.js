@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Box, Tooltip, Button, FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, CardMedia, Typography, CardHeader, CardActions, FormControlLabel } from "@mui/material";
+import { useState } from "react";
+import { FormGroup, Checkbox, Card, CardHeader, FormControlLabel } from "@mui/material";
 
 const Administration1 = () => {
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Box, Tooltip, Button, FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, CardMedia, Typography, CardHeader, CardActions, FormControlLabel } from "@mui/material";
+import { useState } from "react";
+import { Box, Tooltip, FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const ConferenceOrganizer = () => {
@@ -23,7 +23,7 @@ const ConferenceOrganizer = () => {
                     <FormControlLabel control={<Checkbox checked={conferenceOrgChecked} onChange={(e) => handleConferenceOrgChecked(e)} />} label="Do you have Organized any National / International conference as Chairman / Secretary / Convenors / Session Chair / Session Co-Chair?" />
                 </FormGroup>
 
-                {conferenceOrgChecked &&
+                {(conferenceOrgChecked || !numberOfConferenceOrg) &&
                     <>
                         <CardContent>
                             <Tooltip title={

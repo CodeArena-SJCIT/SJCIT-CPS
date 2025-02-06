@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Button, FormGroup, TextField, FormControl, Select, InputLabel, MenuItem, Checkbox, Divider, Card, CardContent, CardMedia, Typography, CardHeader, CardActions, FormControlLabel } from "@mui/material";
+import { useState, useEffect } from "react";
+import { FormGroup, TextField, Checkbox, Card, CardContent, Typography, CardHeader, FormControlLabel } from "@mui/material";
 
 
 const ConferencePapers = () => {

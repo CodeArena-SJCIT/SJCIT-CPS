@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, TextField, Select, MenuItem, FormControl, InputLabel, CircularProgress, LinearProgress, Tab, Tabs, Box } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers";
+import { Tab, Tabs } from "@mui/material";
+/*import { DatePicker } from "@mui/x-date-pickers";*/
 import "./sjcit-cps-login.css";
 import SignUpComponent from './Sign Up Component/signupComponent';
 import SignInComponent from './Sign In Component/singnInComponent';
@@ -23,11 +23,11 @@ export const Login = () => {
                 <Tab label="Sign Up" sx={{ textTransform: "none" }}></Tab>
             </Tabs>
 
-            {tabValue == 0 && (
+            {tabValue === 0 && (
                 <SignInComponent />
             )}
 
-            {tabValue == 1 && (
+            {tabValue === 1 && (
 
                 <SignUpComponent />
 
