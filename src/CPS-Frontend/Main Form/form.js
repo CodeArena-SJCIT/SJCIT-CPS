@@ -18,6 +18,8 @@ const Form = () => {
     const [patents, setPatents] = useState([]);
 
     const [consultancyProjectsOption, setconsultancyProjectsOption] = useState(false);
+    const [consultancyProjectAmount, setconsultancyProjectAmount] = useState();
+    console.log(consultancyProjectAmount);
 
     const amount = ["≥ Rs.25,000 to < Rs. 1 lakh", "≥ Rs.1 lakh to < Rs. 2 lakh", "≥ Rs.2 lakh to < Rs. 5 lakh", "≥ Rs. 5 lakh to < Rs. 10 lakh", "≥ Rs. 10 lakh to < Rs. 20 lakh", "≥ Rs. 20 lakhs"];
 
@@ -88,7 +90,7 @@ const Form = () => {
                     <CardContent>
                         <FormGroup row sx={{ alignItems: "center", gap: 2, justifyContent: "space-between" }}>
                             <Typography>Have you done Any Externally Sponsored R&D Projects</Typography>
-                            <RadioGroup row value={checked} onChange={(e) => setChecked(e.target.value)}>
+                            <RadioGroup row sx={{ gap: 2 }} value={checked} onChange={(e) => setChecked(e.target.value)}>
                                 <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                                 <FormControlLabel value="No" control={<Radio />} label="No" />
                             </RadioGroup>
@@ -140,7 +142,7 @@ const Form = () => {
                     <CardContent>
                         <FormGroup row sx={{ alignItems: "center", gap: 2, justifyContent: "space-between" }}>
                             <Typography>Have you published any patents or hold ownership of any patents?</Typography>
-                            <RadioGroup row value={patentChecked} onChange={(e) => setPatentChecked(e.target.value)}>
+                            <RadioGroup row sx={{ gap: 2 }} value={patentChecked} onChange={(e) => setPatentChecked(e.target.value)}>
                                 <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                                 <FormControlLabel value="No" control={<Radio />} label="No" />
                             </RadioGroup>
@@ -199,7 +201,7 @@ const Form = () => {
 
                     <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
                         <Typography>Have you done any Consultancy Projects</Typography>
-                        <RadioGroup row value={consultancyProjectsOption} onChange={(e) => handleConsultancyProjectsOption(e)}>
+                        <RadioGroup row sx={{ gap: 2 }} value={consultancyProjectsOption} onChange={(e) => handleConsultancyProjectsOption(e)}>
                             <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                             <FormControlLabel value="No" control={<Radio />} label="No" />
                         </RadioGroup>
@@ -207,7 +209,7 @@ const Form = () => {
 
                     {(consultancyProjectsOption !== "No" && consultancyProjectsOption) &&
                         <CardContent>
-                            <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setconsultancyProjectsOption(e.target.value) }} />
+                            <TextField type="number" label="Total Amount of Consultacny  Projects you have done (In Lakhs)" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setconsultancyProjectAmount(e.target.value) }} />
                         </CardContent>
                     }
 

@@ -64,7 +64,7 @@ const PhdComponent = () => {
 
                 <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
                     <Typography>Do you supervise any students pursuing or who have completed a Ph.D.?</Typography>
-                    <RadioGroup row value={phdOptionChecked} onChange={(e) => handlePhdOptionChecked(e)}>
+                    <RadioGroup row sx={{ gap: 2 }} value={phdOptionChecked} onChange={(e) => handlePhdOptionChecked(e)}>
                         <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                         <FormControlLabel value="No" control={<Radio />} label="No" />
                     </RadioGroup>

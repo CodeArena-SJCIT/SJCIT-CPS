@@ -8,6 +8,7 @@ const ConferenceOrganizer = () => {
     const [conferenceOrgChecked, setconferenceOrgChecked] = useState(false);
 
     const [numberOfConferenceOrg, setnumberOfConferenceOrg] = useState();
+    console.log(numberOfConferenceOrg);
 
     const handleConferenceOrgChecked = (e) => {
         setconferenceOrgChecked(e.target.value);
@@ -40,8 +41,6 @@ const ConferenceOrganizer = () => {
                             } arrow placement="right" enterDelay={200} leaveDelay={200}><TextField inputProps={{ min: 0, max: 3 }} type="number" label="How many National / International conference organised as Chairman / Secretary / ...?" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value > 3) { value = 3 } if (value < 0 || isNaN(value)) { value = 0 } e.target.value = value; setnumberOfConferenceOrg(value) }} />
                             </Tooltip>
                         </CardContent>
-
-                        {numberOfConferenceOrg || 1}
 
                     </>
                 }
