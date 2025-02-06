@@ -12,7 +12,6 @@ const ConferenceOrganizer = () => {
 
     const handleConferenceOrgChecked = (e) => {
         setconferenceOrgChecked(e.target.checked);
-        let a = numberOfConferenceOrg;
     }
 
     return (
@@ -24,7 +23,7 @@ const ConferenceOrganizer = () => {
                     <FormControlLabel control={<Checkbox checked={conferenceOrgChecked} onChange={(e) => handleConferenceOrgChecked(e)} />} label="Do you have Organized any National / International conference as Chairman / Secretary / Convenors / Session Chair / Session Co-Chair?" />
                 </FormGroup>
 
-                {conferenceOrgChecked &&
+                {(conferenceOrgChecked || !numberOfConferenceOrg) &&
                     <>
                         <CardContent>
                             <Tooltip title={
