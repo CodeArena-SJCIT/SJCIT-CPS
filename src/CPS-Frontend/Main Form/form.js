@@ -7,6 +7,9 @@ import JournalPapers from "./journal Papers/journalPapers";
 import ConferencePapers from "./Conference Papers/conferecePapers";
 import ConferenceOrganizer from "./Conference Organizer/conferenceOrg";
 import Administration1 from "./Adminstration - 1/adminstration1";
+import Administration2 from "./Administration - 2/administration - 2";
+import Administration3 from "./Administration - 3/administration3";
+import Administration4 from "./Administration - 4/administration4";
 
 const Form = () => {
     const [checked, setChecked] = useState(false);
@@ -224,6 +227,12 @@ const Form = () => {
                 <ConferenceOrganizer />
 
                 <Administration1 />
+
+                <Administration2 />
+
+                <Administration3 />
+
+                <Administration4 />
 
             </div >
         </>
