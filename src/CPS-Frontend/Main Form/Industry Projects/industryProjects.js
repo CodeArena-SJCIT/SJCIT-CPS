@@ -11,12 +11,12 @@ const IndustryProjectCompletion = () => {
 
     const IndustryProjectsOption = ["Sucessfully Completed", "On Going", "Not Completed"];
 
-    const [IndustryAttachementsNumber, setIndustryAttachementsNumber] = useState([]);
+    const [IndustryProjectsNumber, setIndustryProjectsNumber] = useState([]);
 
     useEffect(() => {
         if (NumberofIndustryProjects) {
             const count = parseInt(NumberofIndustryProjects, 10) || 0;
-            setIndustryAttachementsNumber((prevList) => {
+            setIndustryProjectsNumber((prevList) => {
                 const newList = [...prevList];
                 if (newList.length < count) {
                     newList.push(...Array(count - newList.length).fill({ industryAttachementsOption: "" }));
@@ -33,10 +33,10 @@ const IndustryProjectCompletion = () => {
     }
 
     const handleIndustryAttachementsSelect = (index, event) => {
-        const newIndustryAttachementsNumber = [...IndustryAttachementsNumber];
-        newIndustryAttachementsNumber[index] = { ...newIndustryAttachementsNumber[index], industryAttachementsOption: event.target.value }
-        setIndustryAttachementsNumber(newIndustryAttachementsNumber);
-        //console.log(IndustryAttachementsNumber[index]);
+        const newIndustryProjectsNumber = [...IndustryProjectsNumber];
+        newIndustryProjectsNumber[index] = { ...newIndustryProjectsNumber[index], industryAttachementsOption: event.target.value }
+        setIndustryProjectsNumber(newIndustryProjectsNumber);
+        //console.log(IndustryProjectsNumber[index]);
     }
 
     return (
@@ -62,7 +62,7 @@ with UG & PG Projects mentioned earlier)" subheader="Select Options" sx={{ textA
                             <TextField label="How many Industry Projects have Completed Sucessfully?" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value <= 0) { value = 0; } else if (value) { } else { value = isNaN(value); } e.target.value = value; setNumberofIndustryProjects(e.target.value) }} />
                         </FormControl>
 
-                        {(industryProjectsChecked !== "No") && IndustryAttachementsNumber.map((_, index) => (
+                        {(industryProjectsChecked !== "No") && IndustryProjectsNumber.map((_, index) => (
                             <FormControl fullWidth sx={{ marginTop: "20px" }}>
                                 <Typography variant="h5" sx={{ marginBottom: "20px", textAlign: "center" }}>Information About Industry Project {index + 1}</Typography>
                                 <FormControl fullWidth>
