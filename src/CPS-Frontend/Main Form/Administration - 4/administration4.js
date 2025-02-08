@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Radio, RadioGroup, FormGroup, CardContent, Tooltip, Box, TextField, Card, CardHeader, FormControlLabel, Typography } from "@mui/material";
 
-const Administration2 = () => {
+const Administration4 = () => {
 
     const [adminstrationOneChecked, setadminstrationOneChecked] = useState(false);
 
@@ -16,10 +16,14 @@ const Administration2 = () => {
     return (
         <>
             <Card variant="elevation" elevation={5} sx={{ width: '100%', paddingLeft: "40px", paddingRight: "40px" }} raised>
-                <CardHeader title="Chairman of all functional committees, PG Coordinators, Deputy Wardens, NSS Coordinators, NCC Coordinators, Cultural / Sports Coordinators, Associate COE, NAAC / NBA / NIRF Chief coordinators, IIC president, ERP / Timetable coordinator at the institute level" subheader="Select Options" sx={{ textAlign: "center" }} />
+                <CardHeader title="Departmental activities identified by HOD
+like lab in charges, or departmental level
+committees for a min. Period of one year." subheader="Select Options" sx={{ textAlign: "center" }} />
 
                 <FormGroup row sx={{ marginTop: "10px", marginBottom: "20px", alignItems: "center", gap: 2, justifyContent: "space-between" }}>
-                    <Typography>Who holds these institute-level roles: Chairman (functional committees), PG Coordinator, Deputy Warden, NSS/NCC/Cultural/Sports Coordinator, Associate COE, NAAC/NBA/NIRF Chief, IIC President, ERP/Timetable Coordinator?</Typography>
+                    <Typography>Who holds these institute-level roles: Departmental activities identified by HOD
+                        like lab in charges, or departmental level
+                        committees for a min. Period of one year.?</Typography>
                     <RadioGroup row sx={{ gap: 2 }} value={adminstrationOneChecked} onChange={(e) => handleadminstrationOneChecked(e)}>
                         <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                         <FormControlLabel value="No" control={<Radio />} label="No" />
@@ -31,7 +35,9 @@ const Administration2 = () => {
                         <CardContent>
                             <Tooltip title={
                                 <Box sx={{ padding: '8px', maxWidth: "250px" }}>
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Who holds these institute-level roles: Chairman (functional committees), PG Coordinator, Deputy Warden, NSS/NCC/Cultural/Sports Coordinator, Associate COE, NAAC/NBA/NIRF Chief, IIC President, ERP/Timetable Coordinator?</Typography>
+                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Who holds these institute-level roles: Departmental activities identified by HOD
+                                        like lab in charges, or departmental level
+                                        committees for a min. Period of one year.?</Typography>
                                     <Typography variant="body2">
                                         -Maximum Allowed Value is <strong>1</strong> Per Year.<br />
                                         -Please Ensure Valid Entries Only.<br />
@@ -50,4 +56,4 @@ const Administration2 = () => {
     );
 }
 
-export default Administration2;
+export default Administration4;
