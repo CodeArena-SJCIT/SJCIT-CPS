@@ -1,7 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
-import { Button, Radio, RadioGroup, FormGroup, Card, CardHeader, FormControlLabel, Typography, FormControl, Select, MenuItem, InputLabel, TextField } from "@mui/material";
+import { Button, Card, CardHeader, FormControl } from "@mui/material";
 
 const FacultyAppraisal = () => {
 
