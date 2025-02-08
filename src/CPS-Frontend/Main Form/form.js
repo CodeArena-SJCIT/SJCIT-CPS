@@ -10,6 +10,8 @@ import Administration1 from "./Adminstration - 1/adminstration1";
 import Administration2 from "./Administration - 2/administration - 2";
 import Administration3 from "./Administration - 3/administration3";
 import Administration4 from "./Administration - 4/administration4";
+import IndustryAttachement from "./Industry Attachement/industryAttachement";
+import IndustryProjectCompletion from "./Industry Projects/industryProjects";
 
 const Form = () => {
     const [checked, setChecked] = useState(false);
@@ -106,7 +108,7 @@ const Form = () => {
                         <TextField label="How many Externally Sponsored R&D Projects Completed / Ongoing" type="number" variant="outlined" fullWidth onChange={(e) => { let value = parseInt(e.target.value, 10); if (value < 0 || isNaN(value)) { value = 0; } e.target.value = value; setnumberOfResearchProjects(e.target.value) }} />
                     </CardContent>}
 
-                    {checked && projects.map((_, index) => (
+                    {(checked !== "No") && projects.map((_, index) => (
 
                         <CardContent>
                             <Typography variant="h5" sx={{ marginBottom: "20px", textAlign: "center" }}>Information About Research Project {index + 1}</Typography>
@@ -226,6 +228,8 @@ const Form = () => {
 
                 <ConferenceOrganizer />
 
+                {/* This is the Administration Section */}
+
                 <Administration1 />
 
                 <Administration2 />
@@ -233,6 +237,12 @@ const Form = () => {
                 <Administration3 />
 
                 <Administration4 />
+
+                {/* This is the Industry-Instutute Interaction Section */}
+
+                <IndustryAttachement />
+
+                <IndustryProjectCompletion />
 
             </div >
         </>
