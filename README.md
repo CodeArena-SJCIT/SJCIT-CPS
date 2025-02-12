@@ -12,7 +12,7 @@
       <td align="center">
         <a href="https://github.com/Vishnu-dutt">
           <img src="https://avatars.githubusercontent.com/u/144204381?v=4" width="100px;" alt="Contributor 1"/><br />
-          <b>Aditya Saroha</b>
+          <b>Vishnu Dutt</b>
         </a><br />
         <sub>Contributor</sub>
       </td>
