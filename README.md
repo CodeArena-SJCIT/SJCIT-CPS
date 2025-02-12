@@ -9,6 +9,13 @@
         </a><br />
         <sub>Contributor</sub>
       </td>
+      <td align="center">
+        <a href="https://github.com/Vishnu-dutt">
+          <img src="https://avatars.githubusercontent.com/u/144204381?v=4" width="100px;" alt="Contributor 1"/><br />
+          <b>Aditya Saroha</b>
+        </a><br />
+        <sub>Contributor</sub>
+      </td>
     </tr>
   </table>
 </div>
