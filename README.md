@@ -1,3 +1,18 @@
+# Contributors
+<div align="left">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/Aditya-138-12">
+          <img src="https://avatars.githubusercontent.com/u/143502508?v=4" width="100px;" alt="Contributor 1"/><br />
+          <b>Aditya Saroha</b>
+        </a><br />
+        <sub>Contributor</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
 # Important Information
 `The build folder is essential for deploying the code to the production url i.e. sjcit-cps.web.app as in the firebase init command the deploy folder has been selected as the build. So remove the build folder from your .gitignore files if it is there for your commits!`
 
