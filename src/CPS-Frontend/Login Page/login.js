@@ -16,9 +16,9 @@ export const Login = () => {
 
     return (
 
-        <div className='main-login-div'>
+        <div className='main-login-div' >
 
-            <Tabs value={tabValue} onChange={handleTabValueChange} textColor='primary' indicatorColor='primary' centered sx={{ textTransform: "none" }}>
+            <Tabs value={tabValue} onChange={handleTabValueChange} textColor='primary' indicatorColor='primary' centered sx={{ textTransform: "none" }}> 
                 <Tab label="Sign In" sx={{ textTransform: "none" }}></Tab>
                 <Tab label="Sign Up" sx={{ textTransform: "none" }}></Tab>
             </Tabs>
