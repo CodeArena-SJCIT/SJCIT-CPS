@@ -23,20 +23,93 @@ const Landing = () => {
           Login
         </Login>
       </Nav>
-      <Main>Main</Main>
+      <BgImage />
+      <Container>
+        <Content>
+          <CTA>
+            <Title onClick={()=>navigate("/login")} data-aos="flip-up">Credit Point System Faculty Achievement Analytics</Title>
+            <Description data-aos="fade-up">
+              Track, analyze, and celebrate faculty achievements with our
+              comprehensive credit point management system.Transform how you track and analyze faculty accomplishments with our comprehensive Credit Point System.
+            </Description>
+          </CTA>
+        </Content>
+      </Container>
     </>
   );
 };
 
+const Title = styled.a`
+  font-weight: bold;
+  color: white;
+  background-color: #0063e5;
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 16.5px 0;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0483ee;
+  }
+`;
+
+const Description = styled.p`
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  margin: 0 0 24px;
+  line-height: 1.5em;
+  letter-spacing: 1.5px;
+`;
+
+const CTA = styled.div`
+  margin-bottom: 2vw;
+  max-width: 650px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0;
+  align-items: center;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  transition-timing-function: ease-out;
+  transition: opacity 0.2s;
+  width: 100%;
+`;
+
+const Container = styled.section`
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+`;
+
+const Content = styled.div`
+  margin-bottom: 10vw;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 40px;
+  height: 100%;
+`;
+
 const Nav = styled.nav`
-  background-color: white;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-radius: 0 0 4px 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,8 +120,8 @@ const Nav = styled.nav`
 const Logo = styled.a`
   padding: 0;
   margin-top: 4px;
-  width: 90px;
-  max-height: 80px;
+  width: 150px;
+  max-height: 100px;
   font-size: 0;
   display: inline-block;
   img {
@@ -74,8 +147,19 @@ const Login = styled.a`
   }
 `;
 
-const Main = styled.div`
-  margin-top: 70px;
+const BgImage = styled.div`
+  height: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/bgImg.jpg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(5px) brightness(0.7); /* Apply blur and reduce brightness */
+  opacity: 0.6; /* Reduce opacity */
 `;
 
 export default Landing;
