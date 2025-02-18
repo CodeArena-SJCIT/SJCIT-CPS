@@ -12,6 +12,14 @@ import Administration3 from "./Administration - 3/administration3";
 import Administration4 from "./Administration - 4/administration4";
 import IndustryAttachement from "./Industry Attachement/industryAttachement";
 import IndustryProjectCompletion from "./Industry Projects/industryProjects";
+import WorkhopOrganized from "./WrkshopOrganized/workshopOrganized";
+import AttendedWorkshops from "./Attended Workshops/attendedWorkshop";
+import Certification from "./Certification/certification";
+import PGDiscretionGuided from "./PG Discretion Guided/pgDiscretionGuided";
+import UGProjects from "./UG Projects/UGProjects";
+import BooksPublishedInInternational from "./BookPublishedInternational/booksPublishedInternational";
+import BooksPublishedInNational from "./BooksPublishedInNational/booksPublishedNational";
+import FacultyAppraisal from "./Faculty Appraisal/facultyAppraisal";
 
 const Form = () => {
     const [checked, setChecked] = useState(false);
@@ -243,6 +251,26 @@ const Form = () => {
                 <IndustryAttachement />
 
                 <IndustryProjectCompletion />
+
+                {/* This is the Academics Section */}
+
+                <WorkhopOrganized />
+
+                <AttendedWorkshops />
+
+                <Certification maxValue={10} />
+
+
+
+                <PGDiscretionGuided maxValue={20} />
+
+                <UGProjects maxValue={40} />
+
+                <BooksPublishedInInternational />
+
+                <BooksPublishedInNational />
+
+                <FacultyAppraisal />
 
             </div >
         </>
