@@ -1,21 +1,21 @@
 .main-login-div {
-    position: absolute;
-    padding: 50px;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    height: auto;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border: 0.1px solid rgba(0, 0, 0, 0.486);
-    border-radius: 20px;
-    transition: linear;
+  position: absolute;
+  padding: 50px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 0.1px solid rgba(0, 0, 0, 0.486);
+  border-radius: 20px;
+  transition: linear;
 }
 
-@media (max-width:480px) {
-    .main-login-div {
-        width: 70%;
-    }
+@media (max-width: 480px) {
+  .main-login-div {
+    width: 70%;
+  }
 }

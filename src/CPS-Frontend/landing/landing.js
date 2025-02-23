@@ -27,10 +27,14 @@ const Landing = () => {
       <Container>
         <Content>
           <CTA>
-            <Title onClick={()=>navigate("/login")} data-aos="flip-up">Credit Point System Faculty Achievement Analytics</Title>
+            <Title onClick={() => navigate("/login")} data-aos="flip-up">
+              Credit Point System Faculty Achievement Analytics
+            </Title>
             <Description data-aos="fade-up">
               Track, analyze, and celebrate faculty achievements with our
-              comprehensive credit point management system.Transform how you track and analyze faculty accomplishments with our comprehensive Credit Point System.
+              comprehensive credit point management system.Transform how you
+              track and analyze faculty accomplishments with our comprehensive
+              Credit Point System.
             </Description>
           </CTA>
         </Content>
