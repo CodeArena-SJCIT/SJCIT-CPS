@@ -21,7 +21,7 @@
 </div>
 
 # Important Information
-`The build folder is essential for deploying the code to the production url i.e. sjcit-cps.web.app as in the firebase init command the deploy folder has been selected as the build. So remove the build folder from your .gitignore files if it is there for your commits!`
+`The build folder is essential for deploying the code to the production url i.e. sjcit-cps.web.app as in the firebase init command the deploy folder has been selected as the build. So remove the build folder from your .gitignore files if it is there for your commits!!`
 
 #### Example of your .gitignore file, and how it should be modified.
 
